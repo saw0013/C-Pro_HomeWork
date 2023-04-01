@@ -1,0 +1,8 @@
+D:\VisualStudio\Unit15\Unit15\obj\Debug\Unit15.csproj.AssemblyReference.cache
+D:\VisualStudio\Unit15\Unit15\obj\Debug\Unit15.csproj.SuggestedBindingRedirects.cache
+D:\VisualStudio\Unit15\Unit15\obj\Debug\Unit15.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Unit15\Unit15\bin\Debug\Unit15.exe.config
+D:\VisualStudio\Unit15\Unit15\bin\Debug\Unit15.exe
+D:\VisualStudio\Unit15\Unit15\bin\Debug\Unit15.pdb
+D:\VisualStudio\Unit15\Unit15\obj\Debug\Unit15.exe
+D:\VisualStudio\Unit15\Unit15\obj\Debug\Unit15.pdb
