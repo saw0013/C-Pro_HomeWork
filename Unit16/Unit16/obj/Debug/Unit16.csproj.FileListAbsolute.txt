@@ -16,3 +16,5 @@ D:\VisualStudio\Unit16\Unit16\obj\Debug\Unit16.exe
 D:\VisualStudio\Unit16\Unit16\obj\Debug\Unit16.pdb
 D:\VisualStudio\Unit16\Unit16\obj\Debug\AddClientData.g.cs
 D:\VisualStudio\Unit16\Unit16\obj\Debug\AddClientData.baml
+D:\VisualStudio\Unit16\Unit16\obj\Debug\AddProductData.g.cs
+D:\VisualStudio\Unit16\Unit16\obj\Debug\AddProductData.baml

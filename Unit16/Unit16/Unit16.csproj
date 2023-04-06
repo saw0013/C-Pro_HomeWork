@@ -55,14 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AddClientData.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="AddProductData.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddClientData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddProductData.xaml.cs">
+      <DependentUpon>AddProductData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddClientData.xaml.cs">
       <DependentUpon>AddClientData.xaml</DependentUpon>
     </Compile>

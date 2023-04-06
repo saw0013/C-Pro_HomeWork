@@ -20,9 +20,12 @@
                   SelectionMode="Single" 
                   AutoGenerateColumns="False" 
                   ItemsSource="{Binding}"
+                  CanUserAddRows="False"
                   IsReadOnly="False" 
-                  CurrentCellChanged="GVCurrentCellChanged"
-                  CellEditEnding="GVCellEditEnding" Margin="10,34,237,10"
+                  CurrentCellChanged="GVCurrentClientCellChanged"
+                  CellEditEnding="GVCellClientEditEnding" 
+                  Margin="10,34,237,10"
+                  SelectionChanged="GVSelectionChanged"
                   >
 
             <DataGrid.Columns>
@@ -48,7 +51,7 @@
                                     Header="Номер телефона"/>
 
                 <DataGridTextColumn x:Name="emailAdress" 
-                                    Binding="{Binding emailAdress}" 
+                                    Binding="{Binding email}" 
                                     Header="Почта Email"/>
 
             </DataGrid.Columns>
@@ -66,22 +69,22 @@
                   AutoGenerateColumns="False" 
                   ItemsSource="{Binding}"
                   IsReadOnly="False" 
-                  CurrentCellChanged="GVCurrentCellChanged"
-                  CellEditEnding="GVCellEditEnding" Margin="453,39,10,265" Grid.ColumnSpan="2"
+                  CanUserAddRows="False"
+                  Margin="453,39,10,265" Grid.ColumnSpan="2"
                   >
 
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="idProduct" 
-                                    Binding="{Binding idProduct}" 
+                                    Binding="{Binding id}" 
                                     Header="Id товара" 
                                     IsReadOnly="True"/>
 
                 <DataGridTextColumn x:Name="idEmailAdress" 
-                                    Binding="{Binding idEmailAdress}" 
+                                    Binding="{Binding email}" 
                                     Header="Почта Email"/>
 
                 <DataGridTextColumn x:Name="productCode" 
-                                    Binding="{Binding productCode}" 
+                                    Binding="{Binding codeProduct}" 
                                     Header="Код продукта"/>
 
                 <DataGridTextColumn x:Name="nameProduct" 

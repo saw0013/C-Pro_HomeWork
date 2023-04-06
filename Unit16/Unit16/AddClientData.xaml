@@ -5,105 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unit16"
         mc:Ignorable="d"
-        Title="Добавление записи" Height="200" Width="400">
+        Title="Добавление записи (клиент)" Height="250" Width="400"
+        MinWidth="399" MaxWidth="400"
+        MinHeight="249" MaxHeight="251">
+
     <Grid Height="184" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Фамилия" 
-               HorizontalAlignment="Left" 
-               Margin="10,15,0,0" 
-               VerticalAlignment="Top" 
-               Width="190" 
-               Height="24" 
-               RenderTransformOrigin="0.5,0.5"/>
 
         <Label Content="Фамилия" 
-            HorizontalAlignment="Left" 
-            Margin="10,15,0,0" 
-            VerticalAlignment="Top" 
+            Margin="0,15,200,145" 
             Width="190" 
-            Height="24" 
-            RenderTransformOrigin="0.5,0.5"/>
+            RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"/>
 
         <Label Content="Имя" 
-            HorizontalAlignment="Left" 
-            Margin="10,44,0,0" 
-            VerticalAlignment="Top" 
+            Margin="0,44,200,116" 
             Width="190" 
-            Height="24" 
-            RenderTransformOrigin="0.5,0.5"/>
+            RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"/>
 
         <Label Content="Отчество" 
-            HorizontalAlignment="Left" 
-            Margin="10,73,0,0" 
-            VerticalAlignment="Top" 
+            Margin="0,73,200,87" 
             Width="190" 
-            Height="24" 
-            RenderTransformOrigin="0.5,0.5"/>
+            RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"/>
 
         <Label Content="Номер телефона" 
-            HorizontalAlignment="Left" 
-            Margin="10,102,0,0" 
-            VerticalAlignment="Top" 
+            Margin="0,102,200,58" 
             Width="190" 
-            Height="24" 
-            RenderTransformOrigin="0.5,0.5"/>
+            RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"/>
 
         <Label Content="Email потча" 
-            HorizontalAlignment="Left" 
-            Margin="10,131,0,0" 
-            VerticalAlignment="Top" 
+            Margin="0,131,200,29" 
             Width="190" 
-            Height="24" 
-            RenderTransformOrigin="0.5,0.5"/>
+            RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"/>
 
         <TextBox 
-            x:Name="lastName"            
-            HorizontalAlignment="Left" 
-            Margin="200,21,0,0" 
-            TextWrapping="Wrap" VerticalAlignment="Top" Width="190" />
+            x:Name="lastName" 
+            Margin="200,21,10,0" 
+            TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextChanged" />
 
         <TextBox 
-            x:Name="name"            
-            HorizontalAlignment="Left" 
-            Margin="200,47,0,0" 
+            x:Name="name" 
+            Margin="200,47,10,0" 
             TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="190"/>
+            VerticalAlignment="Top"
+            TextChanged="TextChanged"/>
 
         <TextBox 
-            x:Name="middleName"            
-            HorizontalAlignment="Left" 
-            Margin="200,76,0,0" 
+            x:Name="middleName" 
+            Margin="200,76,10,0" 
             TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="190"/>
+            VerticalAlignment="Top"
+            TextChanged="TextChanged"/>
 
         <TextBox 
-            x:Name="numberPhone"            
-            HorizontalAlignment="Left" 
-            Margin="200,105,0,0" 
+            x:Name="numberPhone" 
+            Margin="200,105,10,0" 
             TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="190"/>
+            VerticalAlignment="Top"/>
 
         <TextBox 
             x:Name="Email"
-            HorizontalAlignment="Left"
-            Margin="200,134,0,0" 
+            Margin="200,134,10,0" 
             TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="190"/>
+            VerticalAlignment="Top"
+            TextChanged="TextChanged"/>
 
         <Button
             x:Name="AddButton"
             Content="Добавить" 
-            HorizontalAlignment="Left" 
-            Margin="0,160,0,0" VerticalAlignment="Top" 
-            Height="24" Width="200"/>
+            IsEnabled="False"
+            HorizontalAlignment="Right" 
+            Margin="0,173,205,-13" Width="185"/>
         <Button 
             x:Name="CancelButton"
             Content="Отмена" 
-            HorizontalAlignment="Left" 
-            Margin="200,160,0,0" 
-            VerticalAlignment="Top" Height="24" Width="200"/>
+            HorizontalAlignment="Left" Width="185" Margin="205,0,0,-13" Height="24" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="Unit16.AddProductData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Unit16"
+        mc:Ignorable="d"
+        Title="Добавление записи (Товар)" Height="250" Width="400"
+        MinWidth="399" MaxWidth="400"
+        MinHeight="249" MaxHeight="251">
+
+    <Grid Height="184" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Название товара" 
+            Margin="5,74,0,86" 
+            Width="190" 
+            RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left"/>
+
+        <TextBox 
+            x:Name="productName" 
+            Margin="210,77,0,0" 
+            TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="productName_TextChanged"/>
+
+        <Button
+            x:Name="AddButton"
+            Content="Добавить" 
+            IsEnabled="False"
+            HorizontalAlignment="Right" 
+            Margin="0,173,205,-13" Width="185"/>
+        <Button 
+            x:Name="CancelButton"
+            Content="Отмена" 
+            HorizontalAlignment="Left" Width="185" Margin="205,0,0,-13" Height="24" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>
