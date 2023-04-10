@@ -1,0 +1,58 @@
+﻿<Window x:Class="Unit18.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Unit18"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="gridAnimal"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectionMode="Single" 
+                  AutoGenerateColumns="False" 
+                  ItemsSource="{Binding}"
+                  CanUserAddRows="False"
+                  IsReadOnly="False" 
+                  Margin="25,34,464,22"
+                  >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Id" 
+                                    Binding="{Binding Id}" 
+                                    Header="Id" 
+                                    IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="Name" 
+                                    Binding="{Binding Name}" 
+                                    Header="Имя"/>
+
+                <DataGridTextColumn x:Name="Height" 
+                                    Binding="{Binding Height}" 
+                                    Header="Рост"/>
+
+                <DataGridTextColumn x:Name="Weight" 
+                                    Binding="{Binding Weight}" 
+                                    Header="Масса"/>
+
+                <DataGridTextColumn x:Name="TypeAnimal" 
+                                    Binding="{Binding TypeAnimal}" 
+                                    Header="Тип животного"/>
+
+            </DataGrid.Columns>
+
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить данные" Click="MenuItemAddClick"/>
+                    <MenuItem Header="Удалить данные" Click="MenuItemDeleteClick"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        
+        <ComboBox x:Name="typeSave"
+                  HorizontalAlignment="Left" 
+                  Margin="500,36,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="159"/>
+    </Grid>
+</Window>
