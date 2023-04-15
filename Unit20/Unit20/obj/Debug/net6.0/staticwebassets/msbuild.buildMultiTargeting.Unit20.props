@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Unit20.props" />
+</Project>

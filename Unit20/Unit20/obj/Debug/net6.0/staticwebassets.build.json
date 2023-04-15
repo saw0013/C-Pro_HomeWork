@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "S9OZn8SPdjN00u4+wF7Z5R587kv/x2/iMCJUmykt2s8=",
+  "Source": "Unit20",
+  "BasePath": "_content/Unit20",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Unit20\\wwwroot",
+      "Source": "Unit20",
+      "ContentRoot": "D:\\VisualStudio\\Unit20\\Unit20\\wwwroot\\",
+      "BasePath": "_content/Unit20",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\VisualStudio\\Unit20\\Unit20\\wwwroot\\css\\styles.css",
+      "SourceId": "Unit20",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VisualStudio\\Unit20\\Unit20\\wwwroot\\",
+      "BasePath": "_content/Unit20",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    }
+  ]
+}

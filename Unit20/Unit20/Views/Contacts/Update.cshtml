@@ -1,0 +1,37 @@
+﻿@model Contact
+
+<h2>Update Contact</h2>
+<form asp-action="UpdateData" asp-route-id="@Model.ID" method="post">
+    <input type="hidden" name="_method" value="PUT"/>
+    <div class="form-group">
+        <label asp-for="ID" class="control-label"></label>
+        <input asp-for="ID" class="form-control" value="@Model.ID" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" name="LastName" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label"></label>
+        <input asp-for="FirstName" name="FirstName" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="MiddleName" class="control-label"></label>
+        <input asp-for="MiddleName" name="MiddleName" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="control-label"></label>
+        <input asp-for="PhoneNumber" name="PhoneNumber" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Address" class="control-label"></label>
+        <input asp-for="Address" name="Address" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" name="Description" required />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="UpdateData" class="btn btn-primary" />
+    </div>
+</form>
