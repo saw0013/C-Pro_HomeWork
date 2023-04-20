@@ -1,37 +1,37 @@
 ﻿@model Contact
 
 <h2>Update Contact</h2>
-<form asp-action="UpdateData" asp-route-id="@Model.ID" method="post">
-    <input type="hidden" name="_method" value="PUT"/>
+
+<form method="post">
+<input type="hidden" name="_method" value="PUT">
+
+    @Html.HiddenFor(model => model.ID)
+
     <div class="form-group">
-        <label asp-for="ID" class="control-label"></label>
-        <input asp-for="ID" class="form-control" value="@Model.ID" readonly />
+        <label>First Name:</label>
+        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
     </div>
+
     <div class="form-group">
-        <label asp-for="LastName" class="control-label"></label>
-        <input asp-for="LastName" name="LastName" required />
+        <label>Last Name:</label>
+        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
     </div>
+
     <div class="form-group">
-        <label asp-for="FirstName" class="control-label"></label>
-        <input asp-for="FirstName" name="FirstName" required />
+        <label>Phone Number:</label>
+        @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
     </div>
+
     <div class="form-group">
-        <label asp-for="MiddleName" class="control-label"></label>
-        <input asp-for="MiddleName" name="MiddleName" required />
+        <label>Address:</label>
+        @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
     </div>
+
     <div class="form-group">
-        <label asp-for="PhoneNumber" class="control-label"></label>
-        <input asp-for="PhoneNumber" name="PhoneNumber" required />
+        <label>Description:</label>
+        @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
     </div>
-    <div class="form-group">
-        <label asp-for="Address" class="control-label"></label>
-        <input asp-for="Address" name="Address" required />
-    </div>
-    <div class="form-group">
-        <label asp-for="Description" class="control-label"></label>
-        <input asp-for="Description" name="Description" required />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="UpdateData" class="btn btn-primary" />
-    </div>
+
+    <button type="submit" asp-controller="Contacts" asp-action="Update" asp-route-id="@Model.ID" class="btn btn-primary">Update</button>
+
 </form>

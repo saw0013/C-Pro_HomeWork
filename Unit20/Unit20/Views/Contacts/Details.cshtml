@@ -37,4 +37,4 @@
     </tr>
 </table>
 
-@Html.ActionLink("Обновить данные", "Update", new { id = Model.ID })  <a href="/Contacts/Delete" class="btn">Удалить данные</a>
+@Html.ActionLink("Обновить данные", "Update", new {Model.ID})  @Html.ActionLink("Удалить данные", "Delete", new {Model.ID})

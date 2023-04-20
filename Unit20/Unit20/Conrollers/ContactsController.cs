@@ -24,9 +24,13 @@ namespace Unit20
 
         // GET: Contacts/Delete
         [HttpGet]
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            var ContactsData = new ContactsContext();
+
+            var contact = ContactsData.Contacts.FirstOrDefault(e => e.ID == id);
+
+            return View(contact);
         }
 
         // Post: Contacts/Create
@@ -63,32 +67,56 @@ namespace Unit20
             return View(contact);
         }
 
+        //[HttpPut]
+        //public IActionResult Update(int id)
+        //{
+        //    Console.WriteLine(id);
+
+        //    return Ok();
+        //}
+
         // PUT: Contacts/Update
         [HttpPut]
-        public IActionResult UpdateData(Contact contact)
+        public IActionResult Update (Contact id)
         {
+            Console.WriteLine($"Update! {id}");
+
             using (var db = new ContactsContext())
             {
-                var existingContact = db.Contacts.FirstOrDefault(c => c.ID == contact.ID);
-
-                Console.WriteLine($"Update! {contact}");
+                var existingContact = db.Contacts.FirstOrDefault(c => c.ID == id.ID);
 
                 if (existingContact != null)
                 {
-                    existingContact.FirstName = contact.FirstName;
-                    existingContact.LastName = contact.LastName;
-                    existingContact.MiddleName = contact.MiddleName;
-                    existingContact.PhoneNumber = contact.PhoneNumber;
-                    existingContact.Address = contact.Address;
-                    existingContact.Description = contact.Description;
+                    existingContact.FirstName = id.FirstName;
+                    existingContact.LastName = id.LastName;
+                    existingContact.MiddleName = id.MiddleName;
+                    existingContact.PhoneNumber = id.PhoneNumber;
+                    existingContact.Address = id.Address;
+                    existingContact.Description = id.Description;
 
                     db.SaveChanges();
-
-                    return RedirectToAction("Details", new { id = existingContact.ID });
                 }
 
-                return RedirectToAction("Index");
+                return Redirect("~/");
             }
+        }
+
+        [HttpDelete]
+        public IActionResult Delete (Contact contact)
+        {
+            Console.WriteLine($"Delete");
+
+            var ContactsData = new ContactsContext();
+
+            if (contact == null)
+            {
+                return NotFound();
+            }
+
+            ContactsData.Contacts.Remove(contact);
+            ContactsData.SaveChanges();
+
+            return Ok();
         }
 
         public IActionResult Details(int id)

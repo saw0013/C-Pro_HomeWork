@@ -1,11 +1,20 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.Extensions.Configuration;
+using Unit20;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
+                                                            .AllowAnyMethod()
+                                                            .AllowAnyHeader()));
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -21,6 +30,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseCors("AllowAll");
 
 app.UseEndpoints(endpoints =>
 {
