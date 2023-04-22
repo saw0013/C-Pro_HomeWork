@@ -35,3 +35,7 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/VisualStudio/Unit20/Unit20/Views/Contacts/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/Unit20/Unit20/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

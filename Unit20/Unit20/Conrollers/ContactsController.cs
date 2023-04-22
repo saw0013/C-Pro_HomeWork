@@ -9,17 +9,18 @@ namespace Unit20
 {
     public class ContactsController : Controller
     {
+        // GET: Contacts/Index
         public IActionResult Index()
         {
-            ViewBag.Contacts = new ContactsContext().Contacts;
-            return View();
+            ViewBag.Contacts = new ContactsContext().Contacts; // Денамическая переменная 
+            return View(); // Просто демонстрируем представлнеие
         }
 
         // GET: Contacts/Create
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            return View(); // Просто демонстрируем представлнеие
         }
 
         // GET: Contacts/Delete
@@ -28,9 +29,9 @@ namespace Unit20
         {
             var ContactsData = new ContactsContext();
 
-            var contact = ContactsData.Contacts.FirstOrDefault(e => e.ID == id);
+            var contact = ContactsData.Contacts.FirstOrDefault(e => e.ID == id); // Находи контакт, который хотим удалить
 
-            return View(contact);
+            return View(contact); // Передаем контакт в представление
         }
 
         // Post: Contacts/Create
@@ -39,6 +40,7 @@ namespace Unit20
         {
             using (var db = new ContactsContext())
             {
+                // Добовляем введенные данные в базу даных
                 db.Contacts.Add(
                     new Contact()
                     {
@@ -50,82 +52,74 @@ namespace Unit20
                         Description = contact.Description,
                     });
 
-                db.SaveChanges();
+                db.SaveChanges(); // Сохраняем измененные данные
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); // Переадресовываем в Index
         }
 
         // GET: Contacts/Update
         [HttpGet()]
         public IActionResult Update(int id)
         {
-            Console.WriteLine("Update!1");
             var ContactsData = new ContactsContext();
 
-            var contact = ContactsData.Contacts.FirstOrDefault(e => e.ID == id);
+            var contact = ContactsData.Contacts.FirstOrDefault(e => e.ID == id); // Находи контакт, который хотим обновить
          
-            return View(contact);
+            return View(contact); // Передаем контакт в представление
         }
 
-        //[HttpPut]
-        //public IActionResult Update(int id)
-        //{
-        //    Console.WriteLine(id);
-
-        //    return Ok();
-        //}
-
-        // PUT: Contacts/Update
-        [HttpPut]
-        public IActionResult Update (Contact id)
+        // PUT: Contacts/UpdateData
+        [Route("Contacts/UpdateData/{id:int}")]
+        [HttpPut("Contacts/UpdateData/{id:int}")]
+        public IActionResult UpdateData(Contact model)
         {
-            Console.WriteLine($"Update! {id}");
-
             using (var db = new ContactsContext())
             {
-                var existingContact = db.Contacts.FirstOrDefault(c => c.ID == id.ID);
+                var existingContact = db.Contacts.FirstOrDefault(c => c.ID == model.ID);
 
-                if (existingContact != null)
+                if (existingContact != null) //Если контакт найден, то изменяем данные
                 {
-                    existingContact.FirstName = id.FirstName;
-                    existingContact.LastName = id.LastName;
-                    existingContact.MiddleName = id.MiddleName;
-                    existingContact.PhoneNumber = id.PhoneNumber;
-                    existingContact.Address = id.Address;
-                    existingContact.Description = id.Description;
+                    existingContact.FirstName = model.FirstName;
+                    existingContact.LastName = model.LastName;
+                    existingContact.MiddleName = model.MiddleName;
+                    existingContact.PhoneNumber = model.PhoneNumber;
+                    existingContact.Address = model.Address;
+                    existingContact.Description = model.Description;
 
-                    db.SaveChanges();
+                    db.Contacts.Update(existingContact); // Обновляем введеные данные
+                    db.SaveChanges(); // Сохраняем измененные данные
                 }
-
-                return Redirect("~/");
+                 
+                return Redirect("~/"); // Переадресовываем в конец
             }
         }
 
-        [HttpDelete]
-        public IActionResult Delete (Contact contact)
+        // DELETE: Contacts/DeleteData
+        [Route("Contacts/DeleteData/{id:int}")]
+        [HttpDelete("Contacts/DeleteData/{id:int}")]
+        public IActionResult DeleteData(Contact contact)
         {
-            Console.WriteLine($"Delete");
-
             var ContactsData = new ContactsContext();
 
-            if (contact == null)
+            if (contact == null) // Если не нашли кконтакт, выводим ошибкку
             {
                 return NotFound();
             }
 
-            ContactsData.Contacts.Remove(contact);
-            ContactsData.SaveChanges();
+            ContactsData.Contacts.Remove(contact); // Удаляем данные
+            ContactsData.SaveChanges(); // Сохраняем измененные данные
 
-            return Ok();
+            return Redirect("~/"); // Переадресовываем в конец
         }
 
+        // GET: Contacts/Details
         public IActionResult Details(int id)
         {
             var Contacts = new ContactsContext().Contacts;
 
-            var contact = Contacts.FirstOrDefault(e => e.ID == id);
+            var contact = Contacts.FirstOrDefault(e => e.ID == id); // Находим контакт 
 
-            return View(contact);
+            return View(contact); // Показываем всю информацию в представление
         }
     }
 }
